@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build Status](https://dev.azure.com/benedicttobias0458/benedicttobias/_apis/build/status/random-jokes-CI?branchName=master)](https://dev.azure.com/benedicttobias0458/benedicttobias/_build/latest?definitionId=3&branchName=master)
+
 
 ## Available Scripts
 
