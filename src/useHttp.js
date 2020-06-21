@@ -11,7 +11,7 @@ const useHttp = (url, dependencies) => {
         .then(data => {
             setData(data);
         })
-    }, [dependencies])
+    }, dependencies)
 
 
     return [data]
