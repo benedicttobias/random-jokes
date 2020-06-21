@@ -1,14 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Jokes from './jokes'
-
+import JokePicker from './jokePicker';
+import { JokeContext } from './jokeContext';
 
 function App() {
+  const [jokeOption, setJokeOption] = useState('nsfw');
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <Jokes />
-      </header>
+      <JokeContext.Provider value={{jokeOption, setJokeOption}}>
+        <header className="App-header">
+          <Jokes />
+        </header>
+        <div>
+          <JokePicker />
+        </div>
+      </JokeContext.Provider>
     </div>
   );
 }

@@ -1,6 +1,8 @@
-import React, {useState, useEffect}  from 'react';
+import React, {useState, useEffect, useContext}  from 'react';
+import { JokeContext } from './jokeContext';
 
 const Jokes = props => {
+    const {jokeOption, setJokeOption} = useContext(JokeContext);
     const [joke, setJoke] = useState(null);
     const [isLame, setIsLame] = useState(true);
 
@@ -32,7 +34,7 @@ const Jokes = props => {
                 <h1>{joke}</h1>
             </div>
             <div>
-                <button class="btn btn-primary" onClick={() => setIsLame(true)}>Lame!</button>
+                <button className="btn btn-primary" onClick={() => setIsLame(true)}>Lame!</button>
             </div>
         </>
     );    
