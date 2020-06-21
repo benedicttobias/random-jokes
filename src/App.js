@@ -5,7 +5,7 @@ import JokePicker from './jokePicker';
 import { JokeContext } from './jokeContext';
 
 function App() {
-  const [jokeOption, setJokeOption] = useState('nsfw');
+  const [jokeOption, setJokeOption] = useState('chuckNorris');
   
   return (
     <div className="App">
