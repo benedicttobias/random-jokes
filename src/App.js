@@ -12,9 +12,10 @@ function App() {
       <JokeContext.Provider value={{jokeOption, setJokeOption}}>
         <header className="App-header">
           <Jokes />
+          <JokePicker />
         </header>
         <div>
-          <JokePicker />
+          
         </div>
       </JokeContext.Provider>
     </div>

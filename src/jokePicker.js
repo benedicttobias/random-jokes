@@ -8,8 +8,8 @@ export const JokePicker = props => {
         console.log(jokeOption)
     })
 
-    return (
-        <select value={jokeOption} onChange={(event) => setJokeOption(event.target.value)}>
+    return ( 
+        <select className="m-2 custom-select" value={jokeOption} onChange={(event) => setJokeOption(event.target.value)}>
             <option value="chuckNorris">Chuck Norris</option>
             <option value="nsfw">NSFW</option>
         </select>
