@@ -1,13 +1,15 @@
 import React, { useContext, useEffect } from 'react';
 import { JokeContext } from './jokeContext';
+import { JokeCategory } from './jokeCategory';
 
 export const JokePicker = props => {
     const {jokeOption, setJokeOption} = useContext(JokeContext);
 
     return ( 
         <select className="m-2 custom-select" value={jokeOption} onChange={(event) => setJokeOption(event.target.value)}>
-            <option value="chuckNorris">Chuck Norris</option>
-            <option value="nsfw">NSFW</option>
+            {Object.keys(JokeCategory).map((key) => (
+                <option value={key}>{JokeCategory[key].name}</option>
+            ))}
         </select>
     );
 }

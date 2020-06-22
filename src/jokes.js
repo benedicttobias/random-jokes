@@ -7,15 +7,15 @@ const Jokes = props => {
     const {jokeOption, setJokeOption} = useContext(JokeContext);
     const [count, setCount] = useState(1);
     const [joke, setJoke] = useState(null);
-    const [data] = useHttp(jokeOption === JokeCategory.chuckNorris ? 'https://api.chucknorris.io/jokes/random' : 'https://sv443.net/jokeapi/v2/joke/Miscellaneous?blacklistFlags=religious,political,racist,sexist&type=single', [jokeOption, count]);
+    const [data] = useHttp(jokeOption === JokeCategory.chuckNorris.value ? JokeCategory.chuckNorris.url : JokeCategory.nsfw.url, [jokeOption, count]);
 
     // todo: create custom hook for http? useHttp?
     const fetchJoke = () => {
         switch(jokeOption){
-            case JokeCategory.chuckNorris:
+            case JokeCategory.chuckNorris.value:
                 setJoke(data?.value);
                 break;
-            case JokeCategory.nsfw:
+            case JokeCategory.nsfw.value:
                 setJoke(data?.joke);
                 break;
         }
