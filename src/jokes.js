@@ -4,20 +4,16 @@ import useHttp from './useHttp';
 import { JokeCategory } from './jokeCategory';
 
 const Jokes = props => {
-    const {jokeOption, setJokeOption} = useContext(JokeContext);
+    const {jokeOption} = useContext(JokeContext);
     const [count, setCount] = useState(1);
     const [joke, setJoke] = useState(null);
-    const [data] = useHttp(jokeOption === JokeCategory.chuckNorris.value ? JokeCategory.chuckNorris.url : JokeCategory.nsfw.url, [jokeOption, count]);
+    const [data] = useHttp(JokeCategory.find(x => x.id === jokeOption).url, [jokeOption, count]);
 
-    // todo: create custom hook for http? useHttp?
     const fetchJoke = () => {
-        switch(jokeOption){
-            case JokeCategory.chuckNorris.value:
-                setJoke(data?.value);
-                break;
-            case JokeCategory.nsfw.value:
-                setJoke(data?.joke);
-                break;
+        if (jokeOption == 'chuckNorris'){
+            setJoke(data?.value);
+        } else {
+            setJoke(data?.joke);
         }
     }
 

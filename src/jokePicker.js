@@ -7,8 +7,8 @@ export const JokePicker = props => {
 
     return ( 
         <select className="m-2 custom-select" value={jokeOption} onChange={(event) => setJokeOption(event.target.value)}>
-            {Object.keys(JokeCategory).map((key) => (
-                <option value={key}>{JokeCategory[key].name}</option>
+            {Object.entries(JokeCategory).map((category) => (
+                <option key={category[1].id} value={category[1].id}>{category[1].name}</option>
             ))}
         </select>
     );
